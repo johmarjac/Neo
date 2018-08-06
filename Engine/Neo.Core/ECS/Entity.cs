@@ -36,17 +36,17 @@ namespace Neo.ECS
                 .ForEach(x => ((IDrawableComponent)x).Draw(gameTime));
         }
 
-        public T AddComponent<T>() where T : IComponent, new()
+        public IEntity AddComponent<T>() where T : IComponent, new()
         {
             return AddComponent(new T());
         }
 
-        public T AddComponent<T>(T component) where T : IComponent
+        public IEntity AddComponent<T>(T component) where T : IComponent
         {
             component.Entity = this;
             component.Initialize();
             Components.Add(component);
-            return component;
+            return this;
         }
 
         public T GetComponent<T>() where T : IComponent

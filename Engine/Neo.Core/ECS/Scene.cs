@@ -19,8 +19,10 @@ namespace Neo.ECS
 
         public virtual void Initialize()
         {
-            var cameraEntity = CreateEntity("camera");
-            Camera = cameraEntity.AddComponent<Camera>();
+            var cameraEntity = CreateEntity("camera")
+                .AddComponent<Camera>();
+
+            Camera = cameraEntity.GetComponent<Camera>();
         }
 
         public virtual void Update(GameTime gameTime)

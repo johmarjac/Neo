@@ -17,8 +17,8 @@ namespace Neo.ECS
         void Update(GameTime gameTime);
         void Draw(GameTime gameTime);
 
-        T AddComponent<T>() where T : IComponent, new();
-        T AddComponent<T>(T component) where T : IComponent;
+        IEntity AddComponent<T>() where T : IComponent, new();
+        IEntity AddComponent<T>(T component) where T : IComponent;
 
         T GetComponent<T>() where T : IComponent;
 
