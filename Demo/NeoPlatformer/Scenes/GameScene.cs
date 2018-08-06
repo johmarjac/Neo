@@ -16,7 +16,7 @@ namespace NeoPlatformer.Scenes
         {
             base.Initialize();
 
-            Camera.SetZoom(0.5f);
+            //Camera.SetZoom(0.5f);
 
             PlayerEntity = CreateEntity("player")
                 .AddComponent<PlayerComponent>()

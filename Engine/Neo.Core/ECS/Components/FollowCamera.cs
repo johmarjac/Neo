@@ -10,7 +10,7 @@ namespace Neo.ECS.Components
 
         public override void Update(GameTime gameTime)
         {
-            Camera.Position = Vector2.Lerp(Camera.Position, Entity.Transform.Position, LerpSpeed);
+            Camera.Position = Vector2.Lerp(Camera.Position, Entity.Transform.Position, LerpSpeed);// - new Vector2(40, 20);
         }
     }
 }
