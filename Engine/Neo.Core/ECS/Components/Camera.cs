@@ -36,7 +36,7 @@ namespace Neo.ECS.Components
             get
             {
                 return
-                    Matrix.CreateTranslation(new Vector3(Position, 0)) *
+                    Matrix.CreateTranslation(new Vector3(-Position, 0)) *
                     Matrix.CreateRotationZ(Rotation) *
                     Matrix.CreateScale(new Vector3(Scalation, 1));
             }

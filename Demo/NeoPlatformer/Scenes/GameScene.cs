@@ -21,6 +21,9 @@ namespace NeoPlatformer.Scenes
             PlayerEntity = CreateEntity("player")
                 .AddComponent<PlayerComponent>()
                 .AddComponent<FollowCamera>();
+
+            CreateEntity("giraffe")
+                .AddComponent(new Sprite(NeoCore.NeoContent.Load<Texture2D>("assets/giraffe")));
         }
 
         public override void Update(GameTime gameTime)
@@ -30,6 +33,10 @@ namespace NeoPlatformer.Scenes
             if(Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 PlayerEntity.Transform.Position += new Vector2(1.0f, 0.0f) * gameTime.ElapsedGameTime.Milliseconds;
+            }
+            else if(Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                PlayerEntity.Transform.Position += new Vector2(-1.0f, 0.0f) * gameTime.ElapsedGameTime.Milliseconds;
             }
         }
     }
