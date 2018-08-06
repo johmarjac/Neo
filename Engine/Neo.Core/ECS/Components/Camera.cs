@@ -5,7 +5,7 @@ namespace Neo.ECS.Components
     public class Camera : Component
     {
         public Transform Transform => Entity.GetComponent<Transform>();
-
+                
         public Vector2 Position
         {
             get { return Transform.Position; }
@@ -22,6 +22,11 @@ namespace Neo.ECS.Components
         {
             get { return Transform.Scalation; }
             set { Transform.Scalation = value; }
+        }
+
+        public void SetZoom(float zoom)
+        {
+            Scalation = new Vector2(zoom, zoom);
         }
 
         public Matrix TransformMatrix

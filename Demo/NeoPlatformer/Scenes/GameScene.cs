@@ -11,6 +11,8 @@ namespace NeoPlatformer.Scenes
         {
             base.Initialize();
 
+            Camera.SetZoom(0.5f);
+
             CreateEntity("player")
                 .AddComponent(new Sprite(NeoCore.NeoContent.Load<Texture2D>("assets/elephant")));
         }
